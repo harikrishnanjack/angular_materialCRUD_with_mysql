@@ -5,6 +5,8 @@ this project has two parts
 
 1)backend and 2)frontend
 
+first you start with backend 
+
 1)backend files are routes,db.js,server.js
 
 you cannot see the package.json(package.json in my repository used in the frontend) and package-lock.json in my backend.
@@ -14,25 +16,45 @@ package.json file is given below.
 create package.json file and copy paste the below code then type npm install
 
 {
+
   "name": "crud",
+  
   "version": "1.0.0",
+  
   "description": "",
+  
   "main": "index.js",
+  
   "scripts": {
+  
     "dev": "nodemon server.js",
+    
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
+  
   "keywords": [],
+  
   "author": "",
+  
   "license": "ISC",
+  
   "dependencies": {
+  
     "body-parser": "^1.19.0",
+    
     "cors": "^2.8.5",
+    
     "express": "^4.17.1",
+    
     "express-fileupload": "^1.1.6",
+    
     "image-to-base64": "^2.0.1",
+    
     "mysql": "^2.18.1",
+    
     "nodemon": "^2.0.2",
+    
     "req-flash": "0.0.3"
   }
 }
