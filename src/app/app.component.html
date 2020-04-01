@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <mat-card class="mat">
+        <mat-toolbar color="primary" style="justify-content: center;">Register</mat-toolbar>
+        <form #fm="ngForm" name="form" class="example-form" novalidate>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name"  name="name" [(ngModel)]="employee.name">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Position"  name="position" [(ngModel)]="employee.position">
+                
+              </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Salary" name="salary" [(ngModel)]="employee.salary">
+              
+            </mat-form-field> 
+            <!-- <mat-form-field class="example-full-width">
+              <input matInput type="url" placeholder="image" name="image" [(ngModel)]="employee.image">
+              
+            </mat-form-field>  -->
+              <button mat-raised-button color="primary" class="root"
+              (click)="save();fm.resetForm()">Register</button>
+        </form>
+        </mat-card>
+    </div>
+    <div class="col-sm-7">
+<mat-card class="mat">
+  <table class="table table-hover">
+    <tr><th>Name</th><th>Position</th><th>Salary</th><th>Action</th></tr>
+    <tr *ngFor="let user of users">
+      <td>{{user.name}}</td>
+      <td>{{user.position}}</td>
+      <td>{{user.salary}}</td>
+      <td><button mat-raised-button color="accent" (click)="openModal(template,user)">Update</button>|
+        <button mat-raised-button color="warn" (click)="delete(user.id)">
+          Delete</button></td>
+
+    </tr>
+  </table>
+  <!-- Update -->
+  <ng-template #template>
+    <!-- <div class="modal-header">
+      <h4 class="modal-title pull-left">Modal</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div> -->
+    <div class="modal-body">
+      <mat-card>
+        <mat-toolbar color="accent" style="justify-content: center;">Update</mat-toolbar>
+        <form #fm="ngForm" name="form" class="example-form" novalidate>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Name"  name="name" [(ngModel)]="edituser.name">
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Position"  name="position" [(ngModel)]="edituser.position">
+                
+              </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Salary" name="salary" [(ngModel)]="edituser.salary">
+              
+            </mat-form-field> 
+              <button mat-raised-button color="accent" class="root"
+              (click)="update()">Update</button>
+        </form>
+        </mat-card>
+    </div>
+  </ng-template>
+
+</mat-card>
+      
+    </div>
+  </div>
+</div>
