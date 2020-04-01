@@ -56,8 +56,11 @@ create package.json file and copy paste the below code then type npm install
     "nodemon": "^2.0.2",
     
     "req-flash": "0.0.3"
+    
   }
+  
 }
+
 then type npm start for starting the server
 
 another way is 
